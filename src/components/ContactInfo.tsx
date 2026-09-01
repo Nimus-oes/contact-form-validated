@@ -1,0 +1,26 @@
+export default function ContactInfo() {
+  return (
+    <section>
+      <h1>CONTACT US</h1>
+      <h2>We'd love to hear from you</h2>
+      <p>
+        Have a question, project idea, or just want to say hi? Send us a message
+        and we'll get back to you soon.
+      </p>
+      <address>
+        <div>
+          <p>Email</p>
+          <p>hello@abc.studio</p>
+        </div>
+        <div>
+          <p>Phone</p>
+          <p>+82 10-1234-5678</p>
+        </div>
+        <div>
+          <p>Location</p>
+          <p>Seoul, Republic of Korea</p>
+        </div>
+      </address>
+    </section>
+  );
+}
