@@ -1,3 +1,5 @@
+import styles from "./ContactInfo.module.css";
+
 export default function ContactInfo() {
   return (
     <section>
@@ -7,18 +9,27 @@ export default function ContactInfo() {
         Have a question, project idea, or just want to say hi? Send us a message
         and we'll get back to you soon.
       </p>
-      <address>
-        <div>
-          <p>Email</p>
-          <p>hello@abc.studio</p>
+      <address className={styles.addressContainer}>
+        <div className={styles.addressItem}>
+          <div>★</div>
+          <div>
+            <p className={styles.addressTitle}>Email</p>
+            <p>hello@abc.studio</p>
+          </div>
         </div>
-        <div>
-          <p>Phone</p>
-          <p>+82 10-1234-5678</p>
+        <div className={styles.addressItem}>
+          <div>★</div>
+          <div>
+            <p className={styles.addressTitle}>Phone</p>
+            <p>+82 10-1234-5678</p>
+          </div>
         </div>
-        <div>
-          <p>Location</p>
-          <p>Seoul, Republic of Korea</p>
+        <div className={styles.addressItem}>
+          <div>★</div>
+          <div>
+            <p className={styles.addressTitle}>Location</p>
+            <p>Seoul, Republic of Korea</p>
+          </div>
         </div>
       </address>
     </section>

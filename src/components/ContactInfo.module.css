@@ -1,0 +1,30 @@
+.addressContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addressItem {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addressItem:last-child {
+  width: 100%;
+}
+
+.addressTitle {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .addressItem {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .addressTitle {
+    display: block;
+  }
+}

@@ -1,0 +1,6 @@
+@media (min-width: 960px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+  }
+}
