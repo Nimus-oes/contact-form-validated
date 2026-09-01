@@ -1,0 +1,4 @@
+.inputItem {
+  display: flex;
+  flex-direction: column;
+}
