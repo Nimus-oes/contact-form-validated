@@ -1,0 +1,21 @@
+.trigger {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  min-width: var(--radix-select-trigger-width);
+}
+
+.item {
+  background-color: white;
+}
+
+.item[data-highlighted] {
+  background-color: #f3f4f6;
+  outline: none;
+}
+
+.item[data-state="checked"] {
+  background-color: #e5e7eb;
+}

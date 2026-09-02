@@ -1,4 +1,5 @@
 import styles from "./ContactForm.module.css";
+import SubjectSelect from "./SubjectSelect";
 
 export default function ContactForm() {
   return (
@@ -18,12 +19,7 @@ export default function ContactForm() {
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="subject">Subject</label>
-          <select name="" id="subject">
-            <option value="">Select a subject</option>
-            <option value="general-inquiry">General inquiry</option>
-            <option value="project-inquiry">Project inquiry</option>
-            <option value="other">Other</option>
-          </select>
+          <SubjectSelect />
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="message">Message</label>
