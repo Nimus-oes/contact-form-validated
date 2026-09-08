@@ -4,7 +4,10 @@ import SubjectSelect from "./SubjectSelect";
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm<ContactFormValues>();
+  const { register, handleSubmit } = useForm<ContactFormValues>({
+    mode: "onBlur",
+    reValidateMode: "onChange",
+  });
   const handleFormData = (data: ContactFormValues) => console.log(data);
 
   return (
