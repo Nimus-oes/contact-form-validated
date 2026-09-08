@@ -4,7 +4,11 @@ import SubjectSelect from "./SubjectSelect";
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm<ContactFormValues>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormValues>({
     mode: "onBlur",
     reValidateMode: "onChange",
   });
@@ -19,8 +23,15 @@ export default function ContactForm() {
             id="name"
             type="text"
             placeholder="Your name"
-            {...register("name")}
+            {...register("name", {
+              required: "이름을 입력하세요",
+              maxLength: {
+                value: 50,
+                message: "이름은 50자를 초과할 수 없습니다",
+              },
+            })}
           />
+          {errors.name && <p>{errors.name.message}</p>}
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="email">Email</label>
