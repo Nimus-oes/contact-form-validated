@@ -1,9 +1,20 @@
 import * as Select from "radix-ui/select";
 import styles from "./SubjectSelect.module.css";
+import type { InquiryType } from "../models";
 
-export default function SubjectSelect() {
+type SubjectSelectProps = {
+  name: string;
+  value: InquiryType | "";
+  onValueChange: (value: InquiryType) => void;
+};
+
+export default function SubjectSelect({
+  name,
+  value,
+  onValueChange,
+}: SubjectSelectProps) {
   return (
-    <Select.Root>
+    <Select.Root name={name} value={value} onValueChange={onValueChange}>
       <Select.Trigger id="subject" className={styles.trigger}>
         <Select.Value placeholder="Select a subject" />
         <Select.Icon />

@@ -1,22 +1,24 @@
 import type { ContactFormValues } from "../models";
 import styles from "./ContactForm.module.css";
 import SubjectSelect from "./SubjectSelect";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 export default function ContactForm() {
   const {
+    control,
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<ContactFormValues>({
-    mode: "onBlur",
+    mode: "onSubmit",
     reValidateMode: "onChange",
   });
   const handleFormData = (data: ContactFormValues) => console.log(data);
 
   return (
     <div>
-      <form onSubmit={handleSubmit(handleFormData)}>
+      <form noValidate onSubmit={handleSubmit(handleFormData)}>
         <div className={styles.inputItem}>
           <label htmlFor="name">Name</label>
           <input
@@ -24,6 +26,11 @@ export default function ContactForm() {
             type="text"
             placeholder="Your name"
             {...register("name", {
+              onBlur: (event) => {
+                setValue("name", event.target.value.trim(), {
+                  shouldDirty: true,
+                });
+              },
               required: "이름을 입력하세요",
               maxLength: {
                 value: 50,
@@ -39,8 +46,20 @@ export default function ContactForm() {
             id="email"
             type="email"
             placeholder="you@example.com"
-            {...register("email")}
+            {...register("email", {
+              onBlur: (event) => {
+                setValue("email", event.target.value.trim(), {
+                  shouldDirty: true,
+                });
+              },
+              required: "이메일을 입력하세요",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "이메일 형식이 올바르지 않습니다",
+              },
+            })}
           />
+          {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="phone">Phone (Optional)</label>
@@ -53,25 +72,52 @@ export default function ContactForm() {
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="subject">Subject</label>
-          <SubjectSelect />
+          <Controller
+            name="subject"
+            control={control}
+            rules={{ required: "문의 유형을 선택하세요" }}
+            render={({ field }) => (
+              <SubjectSelect
+                value={field.value}
+                onValueChange={field.onChange}
+                name={field.name}
+              />
+            )}
+          />
+          {errors.subject && <p>{errors.subject.message}</p>}
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
             placeholder="Tell us about your project or inquiry..."
-            {...register("message")}
+            {...register("message", {
+              onBlur: (event) => {
+                setValue("message", event.target.value.trim(), {
+                  shouldDirty: true,
+                });
+              },
+              required: "메시지를 입력하세요",
+              maxLength: {
+                value: 1000,
+                message: "메시지는 1000자를 초과할 수 없습니다",
+              },
+            })}
           ></textarea>
+          {errors.message && <p>{errors.message.message}</p>}
         </div>
         <div className={styles.checkItem}>
           <input
             id="contact-consent"
             type="checkbox"
-            {...register("contactConsent")}
+            {...register("contactConsent", {
+              required: "연락에 동의해야 합니다",
+            })}
           />
           <label htmlFor="contact-consent">
             I consent to being contacted by the team
           </label>
+          {errors.contactConsent && <p>{errors.contactConsent.message}</p>}
         </div>
         <div>
           <button type="submit">Send Message</button>
