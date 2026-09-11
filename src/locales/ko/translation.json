@@ -1,80 +1,80 @@
 {
   "contact": {
-    "description": "",
+    "description": "궁금한 점이나 프로젝트 아이디어가 있으신가요? 메시지를 보내주시면 곧 답변드리겠습니다.",
     "details": {
       "email": {
-        "label": ""
+        "label": "이메일"
       },
       "location": {
-        "label": "",
-        "value": ""
+        "label": "위치",
+        "value": "대한민국 서울"
       },
       "phone": {
-        "label": ""
+        "label": "전화번호"
       }
     },
-    "heading": "",
-    "tagline": ""
+    "heading": "문의하기",
+    "tagline": "무엇이든 물어보세요"
   },
   "form": {
     "actions": {
-      "submit": ""
+      "submit": "메시지 보내기"
     },
     "fields": {
       "contactConsent": {
-        "label": ""
+        "label": "상기 연락처를 통해 연락을 받는 데 동의합니다"
       },
       "email": {
-        "label": ""
+        "label": "이메일"
       },
       "message": {
-        "label": "",
-        "placeholder": ""
+        "label": "메시지",
+        "placeholder": "프로젝트나 문의 내용을 알려주세요..."
       },
       "name": {
-        "label": "",
-        "placeholder": ""
+        "label": "이름",
+        "placeholder": "이름을 입력하세요"
       },
       "phone": {
-        "label": ""
+        "label": "전화번호 (선택)"
       },
       "subject": {
-        "label": "",
+        "label": "문의 유형",
         "options": {
-          "general": "",
-          "other": "",
-          "project": ""
+          "general": "일반 문의",
+          "other": "기타",
+          "project": "프로젝트 문의"
         },
-        "placeholder": ""
+        "placeholder": "문의 유형을 선택하세요"
       }
     }
   },
   "success": {
     "actions": {
-      "writeAgain": ""
+      "writeAgain": "다시 작성하기"
     },
-    "description": "",
-    "thanks": "",
-    "title": ""
+    "description": "가능한 한 빨리 답변드리겠습니다.",
+    "thanks": "문의해 주셔서 감사합니다.",
+    "title": "메시지를 보냈습니다!"
   },
   "validation": {
     "contactConsent": {
-      "required": ""
+      "required": "연락에 동의해야 합니다"
     },
     "email": {
-      "invalidFormat": "",
-      "required": ""
+      "invalidFormat": "이메일 형식이 올바르지 않습니다",
+      "required": "이메일을 입력하세요"
     },
     "message": {
-      "maxLength": "",
-      "required": ""
+      "maxLength": "메시지는 1000자를 초과할 수 없습니다",
+      "required": "메시지를 입력하세요"
     },
     "name": {
-      "maxLength": "",
-      "required": ""
+      "maxLength": "이름은 50자를 초과할 수 없습니다",
+      "required": "이름을 입력하세요"
     },
     "subject": {
-      "required": ""
+      "required": "문의 유형을 선택하세요"
     }
   }
 }
