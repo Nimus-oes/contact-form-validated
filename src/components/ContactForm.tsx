@@ -74,10 +74,10 @@ export default function ContactForm() {
                   shouldDirty: true,
                 });
               },
-              required: "이름을 입력하세요",
+              required: "Please enter your name",
               maxLength: {
                 value: 50,
-                message: "이름은 50자를 초과할 수 없습니다",
+                message: "Name cannot exceed 50 characters",
               },
             })}
           />
@@ -95,10 +95,10 @@ export default function ContactForm() {
                   shouldDirty: true,
                 });
               },
-              required: "이메일을 입력하세요",
+              required: "Please enter your email address",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "이메일 형식이 올바르지 않습니다",
+                message: "Please enter a valid email address",
               },
             })}
           />
@@ -118,7 +118,7 @@ export default function ContactForm() {
           <Controller
             name="subject"
             control={control}
-            rules={{ required: "문의 유형을 선택하세요" }}
+            rules={{ required: "Please select a subject" }}
             render={({ field }) => (
               <SubjectSelect
                 value={field.value}
@@ -142,10 +142,10 @@ export default function ContactForm() {
                   shouldDirty: true,
                 });
               },
-              required: "메시지를 입력하세요",
+              required: "Please enter a message",
               maxLength: {
                 value: 1000,
-                message: "메시지는 1000자를 초과할 수 없습니다",
+                message: "Message cannot exceed 1,000 characters",
               },
             })}
           ></textarea>
@@ -156,7 +156,7 @@ export default function ContactForm() {
             id="contact-consent"
             type="checkbox"
             {...register("contactConsent", {
-              required: "연락에 동의해야 합니다",
+              required: "You must consent to being contacted by the team",
             })}
           />
           <label htmlFor="contact-consent">
