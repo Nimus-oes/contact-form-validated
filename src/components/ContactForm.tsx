@@ -3,8 +3,10 @@ import { DEFAULT_FORM_VALUES, type ContactFormValues } from "../models";
 import styles from "./ContactForm.module.css";
 import SubjectSelect from "./SubjectSelect";
 import { Controller, useForm } from "react-hook-form";
+import { useTranslation } from 'react-i18next'
 
 export default function ContactForm() {
+  const { t } = useTranslation()
   const [isSuccess, setIsSuccess] = useState(false);
   const successTitleRef = useRef<HTMLHeadingElement>(null);
   const wasSuccess = useRef(false);
@@ -48,12 +50,12 @@ export default function ContactForm() {
     return (
       <section aria-labelledby="success-title">
         <h2 id="success-title" ref={successTitleRef} tabIndex={-1}>
-          Message Sent!
+          {t('success.title', 'Message Sent!')}
         </h2>
-        <p>Thanks for reaching out.</p>
-        <p>We'll get back to you as soon as possible.</p>
+        <p>{t('success.thanks', 'Thanks for reaching out.')}</p>
+        <p>{t('success.description', 'We\'ll get back to you as soon as possible.')}</p>
         <button type="button" onClick={handleWriteAgain}>
-          Send another message
+          {t('success.actions.writeAgain', 'Send another message')}
         </button>
       </section>
     );
@@ -63,28 +65,28 @@ export default function ContactForm() {
     <div>
       <form noValidate onSubmit={handleSubmit(handleFormData)}>
         <div className={styles.inputItem}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">{t('form.fields.name.label', 'Name')}</label>
           <input
             id="name"
             type="text"
-            placeholder="Your name"
+            placeholder={t('form.fields.name.placeholder', 'Your name')}
             {...register("name", {
               onBlur: (event) => {
                 setValue("name", event.target.value.trim(), {
                   shouldDirty: true,
                 });
               },
-              required: "Please enter your name",
+              required: t('validation.name.required', 'Please enter your name'),
               maxLength: {
                 value: 50,
-                message: "Name cannot exceed 50 characters",
+                message: t('validation.name.maxLength', 'Name cannot exceed 50 characters'),
               },
             })}
           />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t('form.fields.email.label', 'Email')}</label>
           <input
             id="email"
             type="email"
@@ -95,17 +97,17 @@ export default function ContactForm() {
                   shouldDirty: true,
                 });
               },
-              required: "Please enter your email address",
+              required: t('validation.email.required', 'Please enter your email address'),
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Please enter a valid email address",
+                message: t('validation.email.invalidFormat', 'Please enter a valid email address'),
               },
             })}
           />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="phone">Phone (Optional)</label>
+          <label htmlFor="phone">{t('form.fields.phone.label', 'Phone (Optional)')}</label>
           <input
             id="phone"
             type="text"
@@ -114,11 +116,11 @@ export default function ContactForm() {
           />
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">{t('form.fields.subject.label', 'Subject')}</label>
           <Controller
             name="subject"
             control={control}
-            rules={{ required: "Please select a subject" }}
+            rules={{ required: t('validation.subject.required', 'Please select a subject') }}
             render={({ field }) => (
               <SubjectSelect
                 value={field.value}
@@ -132,20 +134,20 @@ export default function ContactForm() {
           {errors.subject && <p>{errors.subject.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">{t('form.fields.message.label', 'Message')}</label>
           <textarea
             id="message"
-            placeholder="Tell us about your project or inquiry..."
+            placeholder={t('form.fields.message.placeholder', 'Tell us about your project or inquiry...')}
             {...register("message", {
               onBlur: (event) => {
                 setValue("message", event.target.value.trim(), {
                   shouldDirty: true,
                 });
               },
-              required: "Please enter a message",
+              required: t('validation.message.required', 'Please enter a message'),
               maxLength: {
                 value: 1000,
-                message: "Message cannot exceed 1,000 characters",
+                message: t('validation.message.maxLength', 'Message cannot exceed 1,000 characters'),
               },
             })}
           ></textarea>
@@ -156,16 +158,16 @@ export default function ContactForm() {
             id="contact-consent"
             type="checkbox"
             {...register("contactConsent", {
-              required: "You must consent to being contacted by the team",
+              required: t('validation.contactConsent.required', 'You must consent to being contacted by the team'),
             })}
           />
           <label htmlFor="contact-consent">
-            I consent to being contacted by the team
+            {t('form.fields.contactConsent.label', 'I consent to being contacted by the team')}
           </label>
           {errors.contactConsent && <p>{errors.contactConsent.message}</p>}
         </div>
         <div>
-          <button type="submit">Send Message</button>
+          <button type="submit">{t('form.actions.submit', 'Send Message')}</button>
         </div>
       </form>
     </div>

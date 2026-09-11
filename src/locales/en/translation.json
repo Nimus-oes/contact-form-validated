@@ -1,0 +1,80 @@
+{
+  "contact": {
+    "description": "Have a question, project idea, or just want to say hi? Send us a message\n        and we'll get back to you soon.",
+    "details": {
+      "email": {
+        "label": "Email"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Seoul, Republic of Korea"
+      },
+      "phone": {
+        "label": "Phone"
+      }
+    },
+    "heading": "CONTACT US",
+    "tagline": "We'd love to hear from you"
+  },
+  "form": {
+    "actions": {
+      "submit": "Send Message"
+    },
+    "fields": {
+      "contactConsent": {
+        "label": "I consent to being contacted by the team"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your project or inquiry..."
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "phone": {
+        "label": "Phone (Optional)"
+      },
+      "subject": {
+        "label": "Subject",
+        "options": {
+          "general": "General inquiry",
+          "other": "Other",
+          "project": "Project inquiry"
+        },
+        "placeholder": "Select a subject"
+      }
+    }
+  },
+  "success": {
+    "actions": {
+      "writeAgain": "Send another message"
+    },
+    "description": "We'll get back to you as soon as possible.",
+    "thanks": "Thanks for reaching out.",
+    "title": "Message Sent!"
+  },
+  "validation": {
+    "contactConsent": {
+      "required": "You must consent to being contacted by the team"
+    },
+    "email": {
+      "invalidFormat": "Please enter a valid email address",
+      "required": "Please enter your email address"
+    },
+    "message": {
+      "maxLength": "Message cannot exceed 1,000 characters",
+      "required": "Please enter a message"
+    },
+    "name": {
+      "maxLength": "Name cannot exceed 50 characters",
+      "required": "Please enter your name"
+    },
+    "subject": {
+      "required": "Please select a subject"
+    }
+  }
+}

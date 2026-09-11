@@ -1,0 +1,80 @@
+{
+  "contact": {
+    "description": "",
+    "details": {
+      "email": {
+        "label": ""
+      },
+      "location": {
+        "label": "",
+        "value": ""
+      },
+      "phone": {
+        "label": ""
+      }
+    },
+    "heading": "",
+    "tagline": ""
+  },
+  "form": {
+    "actions": {
+      "submit": ""
+    },
+    "fields": {
+      "contactConsent": {
+        "label": ""
+      },
+      "email": {
+        "label": ""
+      },
+      "message": {
+        "label": "",
+        "placeholder": ""
+      },
+      "name": {
+        "label": "",
+        "placeholder": ""
+      },
+      "phone": {
+        "label": ""
+      },
+      "subject": {
+        "label": "",
+        "options": {
+          "general": "",
+          "other": "",
+          "project": ""
+        },
+        "placeholder": ""
+      }
+    }
+  },
+  "success": {
+    "actions": {
+      "writeAgain": ""
+    },
+    "description": "",
+    "thanks": "",
+    "title": ""
+  },
+  "validation": {
+    "contactConsent": {
+      "required": ""
+    },
+    "email": {
+      "invalidFormat": "",
+      "required": ""
+    },
+    "message": {
+      "maxLength": "",
+      "required": ""
+    },
+    "name": {
+      "maxLength": "",
+      "required": ""
+    },
+    "subject": {
+      "required": ""
+    }
+  }
+}
