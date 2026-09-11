@@ -1,4 +1,4 @@
-import type { ContactFormValues } from "../models";
+import { DEFAULT_FORM_VALUES, type ContactFormValues } from "../models";
 import styles from "./ContactForm.module.css";
 import SubjectSelect from "./SubjectSelect";
 import { Controller, useForm } from "react-hook-form";
@@ -13,6 +13,7 @@ export default function ContactForm() {
   } = useForm<ContactFormValues>({
     mode: "onSubmit",
     reValidateMode: "onChange",
+    defaultValues: DEFAULT_FORM_VALUES,
   });
   const handleFormData = (data: ContactFormValues) => console.log(data);
 
