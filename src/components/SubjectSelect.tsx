@@ -1,21 +1,31 @@
 import * as Select from "radix-ui/select";
 import styles from "./SubjectSelect.module.css";
 import type { InquiryType } from "../models";
+import type { Ref } from "react";
 
 type SubjectSelectProps = {
   name: string;
   value: InquiryType | "";
   onValueChange: (value: InquiryType) => void;
+  onBlur: () => void;
+  triggerRef: Ref<HTMLButtonElement>;
 };
 
 export default function SubjectSelect({
   name,
   value,
   onValueChange,
+  onBlur,
+  triggerRef,
 }: SubjectSelectProps) {
   return (
     <Select.Root name={name} value={value} onValueChange={onValueChange}>
-      <Select.Trigger id="subject" className={styles.trigger}>
+      <Select.Trigger
+        id="subject"
+        ref={triggerRef}
+        onBlur={onBlur}
+        className={styles.trigger}
+      >
         <Select.Value placeholder="Select a subject" />
         <Select.Icon />
       </Select.Trigger>

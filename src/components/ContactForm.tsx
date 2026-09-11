@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DEFAULT_FORM_VALUES, type ContactFormValues } from "../models";
 import styles from "./ContactForm.module.css";
 import SubjectSelect from "./SubjectSelect";
@@ -6,19 +6,33 @@ import { Controller, useForm } from "react-hook-form";
 
 export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
+  const successTitleRef = useRef<HTMLHeadingElement>(null);
+  const wasSuccess = useRef(false);
 
   const {
     control,
     register,
     handleSubmit,
     setValue,
+    setFocus,
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
     mode: "onSubmit",
     reValidateMode: "onChange",
     defaultValues: DEFAULT_FORM_VALUES,
+    shouldFocusError: true,
   });
+
+  useEffect(() => {
+    if (isSuccess) {
+      successTitleRef.current?.focus();
+    } else if (wasSuccess.current) {
+      setFocus("name");
+    }
+
+    wasSuccess.current = isSuccess;
+  }, [isSuccess, setFocus]);
 
   const handleFormData = (data: ContactFormValues) => {
     console.log(data);
@@ -32,14 +46,16 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div>
-        <h2>Message Sent!</h2>
+      <section aria-labelledby="success-title">
+        <h2 id="success-title" ref={successTitleRef} tabIndex={-1}>
+          Message Sent!
+        </h2>
         <p>Thanks for reaching out.</p>
         <p>We'll get back to you as soon as possible.</p>
         <button type="button" onClick={handleWriteAgain}>
           Send another message
         </button>
-      </div>
+      </section>
     );
   }
 
@@ -107,7 +123,9 @@ export default function ContactForm() {
               <SubjectSelect
                 value={field.value}
                 onValueChange={field.onChange}
+                onBlur={field.onBlur}
                 name={field.name}
+                triggerRef={field.ref}
               />
             )}
           />
