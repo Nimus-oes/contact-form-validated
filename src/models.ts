@@ -8,12 +8,3 @@ export type ContactFormValues = {
   message: string;
   contactConsent: boolean;
 };
-
-export const DEFAULT_FORM_VALUES: ContactFormValues = {
-  name: "",
-  email: "",
-  phone: "",
-  subject: "",
-  message: "",
-  contactConsent: false,
-};
