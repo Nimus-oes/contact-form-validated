@@ -49,6 +49,9 @@
       }
     }
   },
+  "languageSelector": {
+    "label": "언어 선택"
+  },
   "success": {
     "actions": {
       "writeAgain": "다시 작성하기"

@@ -49,6 +49,9 @@
       }
     }
   },
+  "languageSelector": {
+    "label": "Select a language"
+  },
   "success": {
     "actions": {
       "writeAgain": "Send another message"
