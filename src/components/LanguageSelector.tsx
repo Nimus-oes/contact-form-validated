@@ -1,8 +1,14 @@
+import type { ChangeEvent } from "react";
 import styles from "./LanguageSelector.module.css";
 import { useTranslation } from "react-i18next";
 
 export default function LanguageSelector() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const changeLang = (event: ChangeEvent<HTMLInputElement>) => {
+    i18n.changeLanguage(event.currentTarget.value);
+    localStorage.setItem("appLanguage", event.currentTarget.value);
+  };
+
   return (
     <fieldset className={styles.container}>
       <legend className={styles.visuallyHidden}>
@@ -13,16 +19,18 @@ export default function LanguageSelector() {
         id="language-ko"
         type="radio"
         name="languages"
-        value="한국어"
+        value="ko"
         className={styles.visuallyHidden}
+        onChange={changeLang}
       />
       <label htmlFor="language-ko">한국어</label>
       <input
         id="language-en"
         type="radio"
         name="languages"
-        value="English"
+        value="en"
         className={styles.visuallyHidden}
+        onChange={changeLang}
       />
       <label htmlFor="language-en">English</label>
     </fieldset>

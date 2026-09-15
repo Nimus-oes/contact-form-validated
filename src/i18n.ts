@@ -8,10 +8,16 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    supportedLngs: ["en", "ko"],
+    fallbackLng: "ko",
     debug: true,
+    detection: {
+      order: ["localStorage", "navigator"],
+      lookupLocalStorage: "appLanguage",
+      caches: [],
+    },
     backend: {
-      loadPath: "/locales/{{lng}}/translation.json",
+      loadPath: "public/locales/{{lng}}/translation.json",
     },
     react: {
       useSuspense: true,
