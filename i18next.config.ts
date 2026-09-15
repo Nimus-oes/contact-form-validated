@@ -4,6 +4,6 @@ export default defineConfig({
   locales: ["en", "ko"],
   extract: {
     input: "src/**/*.{ts,tsx}",
-    output: "src/locales/{{language}}/{{namespace}}.json",
+    output: "public/locales/{{language}}/{{namespace}}.json",
   },
 });
