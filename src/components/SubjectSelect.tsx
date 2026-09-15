@@ -28,22 +28,22 @@ export default function SubjectSelect({
         onBlur={onBlur}
         className={styles.trigger}
       >
-        <Select.Value placeholder={t('form.fields.subject.placeholder', 'Select a subject')} />
+        <Select.Value placeholder={t('form.fields.subject.placeholder', '문의 유형을 선택하세요')} />
         <Select.Icon />
       </Select.Trigger>
       <Select.Portal>
         <Select.Content position="popper" className={styles.content}>
           <Select.Viewport>
             <Select.Item value="general-inquiry" className={styles.item}>
-              <Select.ItemText>{t('form.fields.subject.options.general', 'General inquiry')}</Select.ItemText>
+              <Select.ItemText>{t('form.fields.subject.options.general', '일반 문의')}</Select.ItemText>
             </Select.Item>
 
             <Select.Item value="project-inquiry" className={styles.item}>
-              <Select.ItemText>{t('form.fields.subject.options.project', 'Project inquiry')}</Select.ItemText>
+              <Select.ItemText>{t('form.fields.subject.options.project', '프로젝트 문의')}</Select.ItemText>
             </Select.Item>
 
             <Select.Item value="other" className={styles.item}>
-              <Select.ItemText>{t('form.fields.subject.options.other', 'Other')}</Select.ItemText>
+              <Select.ItemText>{t('form.fields.subject.options.other', '기타')}</Select.ItemText>
             </Select.Item>
           </Select.Viewport>
         </Select.Content>

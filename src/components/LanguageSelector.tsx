@@ -12,7 +12,7 @@ export default function LanguageSelector() {
   return (
     <fieldset className={styles.container}>
       <legend className={styles.visuallyHidden}>
-        {t("languageSelector.label", "Select a language")}
+        {t("languageSelector.label", "언어 선택")}
       </legend>
       <div aria-hidden="true">🌏</div>
       <input

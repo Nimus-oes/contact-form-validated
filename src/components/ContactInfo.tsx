@@ -5,16 +5,16 @@ export default function ContactInfo() {
   const { t } = useTranslation()
   return (
     <section>
-      <h1>{t('contact.heading', 'CONTACT US')}</h1>
-      <h2>{t('contact.tagline', 'We\'d love to hear from you')}</h2>
+      <h1>{t('contact.heading', '문의하기')}</h1>
+      <h2>{t('contact.tagline', '무엇이든 물어보세요')}</h2>
       <p>
-        {t('contact.description', 'Have a question, project idea, or just want to say hi? Send us a message\n        and we\'ll get back to you soon.')}
+        {t('contact.description', '궁금한 점이나 프로젝트 아이디어가 있으신가요? 메시지를 보내주시면 곧 답변드리겠습니다.')}
       </p>
       <address className={styles.addressContainer}>
         <div className={styles.addressItem}>
           <div>★</div>
           <div>
-            <p className={styles.addressTitle}>{t('contact.details.email.label', 'Email')}</p>
+            <p className={styles.addressTitle}>{t('contact.details.email.label', '이메일')}</p>
             {/* i18next-instrument-ignore-next-line */}
             <p>hello@abc.studio</p>
           </div>
@@ -22,7 +22,7 @@ export default function ContactInfo() {
         <div className={styles.addressItem}>
           <div>★</div>
           <div>
-            <p className={styles.addressTitle}>{t('contact.details.phone.label', 'Phone')}</p>
+            <p className={styles.addressTitle}>{t('contact.details.phone.label', '전화번호')}</p>
             {/* i18next-instrument-ignore-next-line */}
             <p>+82 10-1234-5678</p>
           </div>
@@ -30,8 +30,8 @@ export default function ContactInfo() {
         <div className={styles.addressItem}>
           <div>★</div>
           <div>
-            <p className={styles.addressTitle}>{t('contact.details.location.label', 'Location')}</p>
-            <p>{t('contact.details.location.value', 'Seoul, Republic of Korea')}</p>
+            <p className={styles.addressTitle}>{t('contact.details.location.label', '위치')}</p>
+            <p>{t('contact.details.location.value', '대한민국 서울')}</p>
           </div>
         </div>
       </address>

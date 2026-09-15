@@ -50,12 +50,12 @@ export default function ContactForm() {
     return (
       <section aria-labelledby="success-title">
         <h2 id="success-title" ref={successTitleRef} tabIndex={-1}>
-          {t('success.title', 'Message Sent!')}
+          {t('success.title', '메시지를 보냈습니다!')}
         </h2>
-        <p>{t('success.thanks', 'Thanks for reaching out.')}</p>
-        <p>{t('success.description', 'We\'ll get back to you as soon as possible.')}</p>
+        <p>{t('success.thanks', '문의해 주셔서 감사합니다.')}</p>
+        <p>{t('success.description', '가능한 한 빨리 답변드리겠습니다.')}</p>
         <button type="button" onClick={handleWriteAgain}>
-          {t('success.actions.writeAgain', 'Send another message')}
+          {t('success.actions.writeAgain', '다시 작성하기')}
         </button>
       </section>
     );
@@ -65,28 +65,28 @@ export default function ContactForm() {
     <div>
       <form noValidate onSubmit={handleSubmit(handleFormData)}>
         <div className={styles.inputItem}>
-          <label htmlFor="name">{t('form.fields.name.label', 'Name')}</label>
+          <label htmlFor="name">{t('form.fields.name.label', '이름')}</label>
           <input
             id="name"
             type="text"
-            placeholder={t('form.fields.name.placeholder', 'Your name')}
+            placeholder={t('form.fields.name.placeholder', '이름을 입력하세요')}
             {...register("name", {
               onBlur: (event) => {
                 setValue("name", event.target.value.trim(), {
                   shouldDirty: true,
                 });
               },
-              required: t('validation.name.required', 'Please enter your name'),
+              required: t('validation.name.required', '이름을 입력하세요'),
               maxLength: {
                 value: 50,
-                message: t('validation.name.maxLength', 'Name cannot exceed 50 characters'),
+                message: t('validation.name.maxLength', '이름은 50자를 초과할 수 없습니다'),
               },
             })}
           />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="email">{t('form.fields.email.label', 'Email')}</label>
+          <label htmlFor="email">{t('form.fields.email.label', '이메일')}</label>
           <input
             id="email"
             type="email"
@@ -97,17 +97,17 @@ export default function ContactForm() {
                   shouldDirty: true,
                 });
               },
-              required: t('validation.email.required', 'Please enter your email address'),
+              required: t('validation.email.required', '이메일을 입력하세요'),
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: t('validation.email.invalidFormat', 'Please enter a valid email address'),
+                message: t('validation.email.invalidFormat', '이메일 형식이 올바르지 않습니다'),
               },
             })}
           />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="phone">{t('form.fields.phone.label', 'Phone (Optional)')}</label>
+          <label htmlFor="phone">{t('form.fields.phone.label', '전화번호 (선택)')}</label>
           <input
             id="phone"
             type="text"
@@ -116,11 +116,11 @@ export default function ContactForm() {
           />
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="subject">{t('form.fields.subject.label', 'Subject')}</label>
+          <label htmlFor="subject">{t('form.fields.subject.label', '문의 유형')}</label>
           <Controller
             name="subject"
             control={control}
-            rules={{ required: t('validation.subject.required', 'Please select a subject') }}
+            rules={{ required: t('validation.subject.required', '문의 유형을 선택하세요') }}
             render={({ field }) => (
               <SubjectSelect
                 value={field.value}
@@ -134,20 +134,20 @@ export default function ContactForm() {
           {errors.subject && <p>{errors.subject.message}</p>}
         </div>
         <div className={styles.inputItem}>
-          <label htmlFor="message">{t('form.fields.message.label', 'Message')}</label>
+          <label htmlFor="message">{t('form.fields.message.label', '메시지')}</label>
           <textarea
             id="message"
-            placeholder={t('form.fields.message.placeholder', 'Tell us about your project or inquiry...')}
+            placeholder={t('form.fields.message.placeholder', '프로젝트나 문의 내용을 알려주세요...')}
             {...register("message", {
               onBlur: (event) => {
                 setValue("message", event.target.value.trim(), {
                   shouldDirty: true,
                 });
               },
-              required: t('validation.message.required', 'Please enter a message'),
+              required: t('validation.message.required', '메시지를 입력하세요'),
               maxLength: {
                 value: 1000,
-                message: t('validation.message.maxLength', 'Message cannot exceed 1,000 characters'),
+                message: t('validation.message.maxLength', '메시지는 1000자를 초과할 수 없습니다'),
               },
             })}
           ></textarea>
@@ -158,16 +158,16 @@ export default function ContactForm() {
             id="contact-consent"
             type="checkbox"
             {...register("contactConsent", {
-              required: t('validation.contactConsent.required', 'You must consent to being contacted by the team'),
+              required: t('validation.contactConsent.required', '연락에 동의해야 합니다'),
             })}
           />
           <label htmlFor="contact-consent">
-            {t('form.fields.contactConsent.label', 'I consent to being contacted by the team')}
+            {t('form.fields.contactConsent.label', '상기 연락처를 통해 연락을 받는 데 동의합니다')}
           </label>
           {errors.contactConsent && <p>{errors.contactConsent.message}</p>}
         </div>
         <div>
-          <button type="submit">{t('form.actions.submit', 'Send Message')}</button>
+          <button type="submit">{t('form.actions.submit', '메시지 보내기')}</button>
         </div>
       </form>
     </div>
