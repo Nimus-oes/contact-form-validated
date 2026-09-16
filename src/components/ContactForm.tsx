@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { DEFAULT_FORM_VALUES, type ContactFormValues } from "../models";
 import styles from "./ContactForm.module.css";
 import SubjectSelect from "./SubjectSelect";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm, useWatch } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
@@ -25,6 +25,13 @@ export default function ContactForm() {
     defaultValues: DEFAULT_FORM_VALUES,
     shouldFocusError: true,
   });
+
+  const message = useWatch({
+    control,
+    name: "message",
+  });
+
+  const messageLength = message.length;
 
   useEffect(() => {
     if (isSuccess) {
@@ -179,6 +186,7 @@ export default function ContactForm() {
               maxLength: 1000,
             })}
           ></textarea>
+          <div>{messageLength}/1000</div>
           {errors.message?.type === "required" && (
             <p>{t("validation.message.required", "메시지를 입력하세요")}</p>
           )}
