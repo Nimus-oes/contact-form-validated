@@ -66,18 +66,18 @@
     },
     "email": {
       "invalidFormat": "Please enter a valid email address",
-      "required": "Please enter your email address"
+      "required": "Email cannot be empty"
     },
     "message": {
       "maxLength": "Message cannot exceed 1,000 characters",
-      "required": "Please enter a message"
+      "required": "Message cannot be empty"
     },
     "name": {
       "maxLength": "Name cannot exceed 50 characters",
-      "required": "Please enter your name"
+      "required": "Name cannot be empty"
     },
     "subject": {
-      "required": "Please select a subject"
+      "required": "This field is required"
     }
   }
 }

@@ -94,7 +94,9 @@ export default function ContactForm() {
           />
           <div className={styles.errorMessageArea}>
             {errors.name?.type === "required" && (
-              <p>{t("validation.name.required", "이름을 입력하세요")}</p>
+              <p>
+                {t("validation.name.required", "이름은 비워둘 수 없습니다")}
+              </p>
             )}
 
             {errors.name?.type === "maxLength" && (
@@ -128,7 +130,9 @@ export default function ContactForm() {
           />
           <div className={styles.errorMessageArea}>
             {errors.email?.type === "required" && (
-              <p>{t("validation.email.required", "이메일을 입력하세요")}</p>
+              <p>
+                {t("validation.email.required", "이메일은 비워둘 수 없습니다")}
+              </p>
             )}
 
             {errors.email?.type === "pattern" && (
@@ -176,9 +180,7 @@ export default function ContactForm() {
           />
           <div className={styles.errorMessageArea}>
             {errors.subject?.type === "required" && (
-              <p>
-                {t("validation.subject.required", "문의 유형을 선택하세요")}
-              </p>
+              <p>{t("validation.subject.required", "필수 선택 항목입니다")}</p>
             )}
           </div>
         </div>
@@ -207,7 +209,12 @@ export default function ContactForm() {
           </div>
           <div className={styles.errorMessageArea}>
             {errors.message?.type === "required" && (
-              <p>{t("validation.message.required", "메시지를 입력하세요")}</p>
+              <p>
+                {t(
+                  "validation.message.required",
+                  "메시지는 비워둘 수 없습니다",
+                )}
+              </p>
             )}
             {errors.message?.type === "maxLength" && (
               <p>
