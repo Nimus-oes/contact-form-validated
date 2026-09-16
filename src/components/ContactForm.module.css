@@ -24,6 +24,7 @@
 .messageResizer textarea::placeholder {
   color: var(--color-muted);
   opacity: 1;
+  font-size: 14px;
 }
 
 .messageResizer {
