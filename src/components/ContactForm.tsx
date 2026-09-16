@@ -254,8 +254,11 @@ export default function ContactForm() {
           </div>
         </div>
         <div>
-          <button type="submit">
-            {t("form.actions.submit", "메시지 보내기")}
+          <button type="submit" className={styles.formSubmitBtn}>
+            <span className={styles.btnText}>
+              {t("form.actions.submit", "메시지 보내기")}
+            </span>
+            <span className={styles.btnIcon}>➤</span>
           </button>
         </div>
       </form>
