@@ -226,20 +226,22 @@ export default function ContactForm() {
             )}
           </div>
         </div>
-        <div className={styles.checkItem}>
-          <input
-            id="contact-consent"
-            type="checkbox"
-            {...register("contactConsent", {
-              required: true,
-            })}
-          />
-          <label htmlFor="contact-consent">
-            {t(
-              "form.fields.contactConsent.label",
-              "상기 연락처를 통해 연락을 받는 데 동의합니다",
-            )}
-          </label>
+        <div>
+          <div className={styles.checkItem}>
+            <input
+              id="contact-consent"
+              type="checkbox"
+              {...register("contactConsent", {
+                required: true,
+              })}
+            />
+            <label htmlFor="contact-consent" className={styles.checkLabel}>
+              {t(
+                "form.fields.contactConsent.label",
+                "상기 연락처를 통해 연락을 받는 데 동의합니다",
+              )}
+            </label>
+          </div>
           <div className={styles.errorMessageArea}>
             {errors.contactConsent?.type === "required" && (
               <p>
