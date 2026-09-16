@@ -5,9 +5,13 @@
 :root {
   --color-heading: #0f172a;
   --color-body: #475569;
+  --color-field-text: #334155;
   --color-muted: #64748b;
   --color-accent: #2563eb;
   --color-error: #dc2626;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-selected: #e5e7eb;
   --color-on-dark: #ffffff;
 }
 

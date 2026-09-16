@@ -3,7 +3,7 @@
   justify-content: space-between;
   height: 40px;
   padding: 10px;
-  color: #334155;
+  color: var(--color-field-text);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -18,18 +18,18 @@
 }
 
 .item {
-  background-color: white;
-  color: #334155;
+  background-color: var(--color-surface);
+  color: var(--color-field-text);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
 }
 
 .item[data-highlighted] {
-  background-color: #f3f4f6;
+  background-color: var(--color-surface-hover);
   outline: none;
 }
 
 .item[data-state="checked"] {
-  background-color: #e5e7eb;
+  background-color: var(--color-surface-selected);
 }

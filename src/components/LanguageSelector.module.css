@@ -1,11 +1,26 @@
 .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
   padding-right: 30px;
   color: var(--color-body);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
+  border: 0;
+  margin-top: 10px;
+}
+
+.container label {
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.container label:hover {
+  background-color: var(--color-surface-hover);
 }
 
 .visuallyHidden {
@@ -23,5 +38,10 @@
 .visuallyHidden:focus-visible + label {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
-  border-radius: 4px;
+}
+
+.visuallyHidden:checked + label {
+  color: var(--color-accent);
+  background-color: var(--color-surface-selected);
+  font-weight: 700;
 }
