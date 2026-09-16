@@ -177,23 +177,25 @@ export default function ContactForm() {
           <label htmlFor="message">
             {t("form.fields.message.label", "메시지")}
           </label>
-          <textarea
-            id="message"
-            placeholder={t(
-              "form.fields.message.placeholder",
-              "프로젝트나 문의 내용을 알려주세요...",
-            )}
-            {...register("message", {
-              onBlur: (event) => {
-                setValue("message", event.target.value.trim(), {
-                  shouldDirty: true,
-                });
-              },
-              required: true,
-              maxLength: 1000,
-            })}
-          ></textarea>
-          <div>{messageLength}/1000</div>
+          <div className={styles.messageResizer}>
+            <textarea
+              id="message"
+              placeholder={t(
+                "form.fields.message.placeholder",
+                "프로젝트나 문의 내용을 알려주세요...",
+              )}
+              {...register("message", {
+                onBlur: (event) => {
+                  setValue("message", event.target.value.trim(), {
+                    shouldDirty: true,
+                  });
+                },
+                required: true,
+                maxLength: 1000,
+              })}
+            ></textarea>
+            <span className={styles.messageCounter}>{messageLength}/1000</span>
+          </div>
           {errors.message?.type === "required" && (
             <p>{t("validation.message.required", "메시지를 입력하세요")}</p>
           )}
