@@ -92,18 +92,20 @@ export default function ContactForm() {
               maxLength: 50,
             })}
           />
-          {errors.name?.type === "required" && (
-            <p>{t("validation.name.required", "이름을 입력하세요")}</p>
-          )}
+          <div className={styles.errorMessageArea}>
+            {errors.name?.type === "required" && (
+              <p>{t("validation.name.required", "이름을 입력하세요")}</p>
+            )}
 
-          {errors.name?.type === "maxLength" && (
-            <p>
-              {t(
-                "validation.name.maxLength",
-                "이름은 50자를 초과할 수 없습니다",
-              )}
-            </p>
-          )}
+            {errors.name?.type === "maxLength" && (
+              <p>
+                {t(
+                  "validation.name.maxLength",
+                  "이름은 50자를 초과할 수 없습니다",
+                )}
+              </p>
+            )}
+          </div>
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="email">
@@ -124,18 +126,20 @@ export default function ContactForm() {
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             })}
           />
-          {errors.email?.type === "required" && (
-            <p>{t("validation.email.required", "이메일을 입력하세요")}</p>
-          )}
+          <div className={styles.errorMessageArea}>
+            {errors.email?.type === "required" && (
+              <p>{t("validation.email.required", "이메일을 입력하세요")}</p>
+            )}
 
-          {errors.email?.type === "pattern" && (
-            <p>
-              {t(
-                "validation.email.invalidFormat",
-                "이메일 형식이 올바르지 않습니다",
-              )}
-            </p>
-          )}
+            {errors.email?.type === "pattern" && (
+              <p>
+                {t(
+                  "validation.email.invalidFormat",
+                  "이메일 형식이 올바르지 않습니다",
+                )}
+              </p>
+            )}
+          </div>
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="phone">
@@ -149,6 +153,7 @@ export default function ContactForm() {
             {...register("phone")}
           />
         </div>
+        <div className={styles.errorMessageArea}></div>
         <div className={styles.inputItem}>
           <label htmlFor="subject">
             {t("form.fields.subject.label", "문의 유형")}
@@ -169,9 +174,13 @@ export default function ContactForm() {
               />
             )}
           />
-          {errors.subject?.type === "required" && (
-            <p>{t("validation.subject.required", "문의 유형을 선택하세요")}</p>
-          )}
+          <div className={styles.errorMessageArea}>
+            {errors.subject?.type === "required" && (
+              <p>
+                {t("validation.subject.required", "문의 유형을 선택하세요")}
+              </p>
+            )}
+          </div>
         </div>
         <div className={styles.inputItem}>
           <label htmlFor="message">
@@ -196,17 +205,19 @@ export default function ContactForm() {
             ></textarea>
             <span className={styles.messageCounter}>{messageLength}/1000</span>
           </div>
-          {errors.message?.type === "required" && (
-            <p>{t("validation.message.required", "메시지를 입력하세요")}</p>
-          )}
-          {errors.message?.type === "maxLength" && (
-            <p>
-              {t(
-                "validation.message.maxLength",
-                "메시지는 1000자를 초과할 수 없습니다",
-              )}
-            </p>
-          )}
+          <div className={styles.errorMessageArea}>
+            {errors.message?.type === "required" && (
+              <p>{t("validation.message.required", "메시지를 입력하세요")}</p>
+            )}
+            {errors.message?.type === "maxLength" && (
+              <p>
+                {t(
+                  "validation.message.maxLength",
+                  "메시지는 1000자를 초과할 수 없습니다",
+                )}
+              </p>
+            )}
+          </div>
         </div>
         <div className={styles.checkItem}>
           <input
@@ -222,14 +233,16 @@ export default function ContactForm() {
               "상기 연락처를 통해 연락을 받는 데 동의합니다",
             )}
           </label>
-          {errors.contactConsent?.type === "required" && (
-            <p>
-              {t(
-                "validation.contactConsent.required",
-                "연락에 동의해야 합니다",
-              )}
-            </p>
-          )}
+          <div className={styles.errorMessageArea}>
+            {errors.contactConsent?.type === "required" && (
+              <p>
+                {t(
+                  "validation.contactConsent.required",
+                  "연락에 동의해야 합니다",
+                )}
+              </p>
+            )}
+          </div>
         </div>
         <div>
           <button type="submit">
