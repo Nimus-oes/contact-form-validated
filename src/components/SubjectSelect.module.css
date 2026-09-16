@@ -1,6 +1,8 @@
 .trigger {
   display: flex;
   justify-content: space-between;
+  height: 40px;
+  padding: 10px;
 }
 
 .content {

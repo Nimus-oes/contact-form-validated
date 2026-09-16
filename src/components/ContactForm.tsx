@@ -70,10 +70,15 @@ export default function ContactForm() {
 
   return (
     <div>
-      <form noValidate onSubmit={handleSubmit(handleFormData)}>
+      <form
+        noValidate
+        onSubmit={handleSubmit(handleFormData)}
+        className={styles.form}
+      >
         <div className={styles.inputItem}>
           <label htmlFor="name">{t("form.fields.name.label", "이름")}</label>
           <input
+            className={styles.textField}
             id="name"
             type="text"
             placeholder={t("form.fields.name.placeholder", "이름을 입력하세요")}
@@ -105,6 +110,7 @@ export default function ContactForm() {
             {t("form.fields.email.label", "이메일")}
           </label>
           <input
+            className={styles.textField}
             id="email"
             type="email"
             placeholder="you@example.com"
@@ -136,6 +142,7 @@ export default function ContactForm() {
             {t("form.fields.phone.label", "전화번호 (선택)")}
           </label>
           <input
+            className={styles.textField}
             id="phone"
             type="text"
             placeholder="010-1234-5678"

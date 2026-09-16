@@ -7,7 +7,7 @@ export default function App() {
   return (
     <main>
       <LanguageSelector />
-      <div className={styles.mainContainer}>
+      <div className={styles.container}>
         <ContactInfo />
         <ContactForm />
       </div>
