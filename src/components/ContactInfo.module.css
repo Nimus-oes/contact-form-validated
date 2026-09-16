@@ -1,6 +1,35 @@
+.info {
+  color: var(--color-body);
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+.heading {
+  color: var(--color-heading);
+  font-size: 34px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: var(--color-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
 .addressContainer {
   display: flex;
   flex-wrap: wrap;
+  color: var(--color-body);
+  font-style: normal;
 }
 
 .addressItem {
@@ -8,6 +37,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .addressItem:last-child {
@@ -16,15 +48,35 @@
 
 .addressTitle {
   display: none;
+  color: var(--color-heading);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
 }
 
 @media (min-width: 960px) {
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  .heading {
+    font-size: 48px;
+    letter-spacing: -0.025em;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
   .addressItem {
     width: 100%;
     justify-content: flex-start;
+    font-size: 16px;
   }
 
   .addressTitle {
     display: block;
+    font-size: 13px;
   }
 }

@@ -2,6 +2,15 @@
   border: 1px solid black;
 }
 
+:root {
+  --color-heading: #0f172a;
+  --color-body: #475569;
+  --color-muted: #64748b;
+  --color-accent: #2563eb;
+  --color-error: #dc2626;
+  --color-on-dark: #ffffff;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -27,4 +36,15 @@ img {
 
 #root {
   min-height: 100vh;
+}
+
+body {
+  color: var(--color-body);
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
 }

@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next'
 export default function ContactInfo() {
   const { t } = useTranslation()
   return (
-    <section>
-      <h1>{t('contact.heading', '문의하기')}</h1>
-      <h2>{t('contact.tagline', '무엇이든 물어보세요')}</h2>
-      <p>
+    <section className={styles.info}>
+      <h1 className={styles.eyebrow}>{t('contact.heading', '문의하기')}</h1>
+      <h2 className={styles.heading}>{t('contact.tagline', '무엇이든 물어보세요')}</h2>
+      <p className={styles.description}>
         {t('contact.description', '궁금한 점이나 프로젝트 아이디어가 있으신가요? 메시지를 보내주시면 곧 답변드리겠습니다.')}
       </p>
       <address className={styles.addressContainer}>
