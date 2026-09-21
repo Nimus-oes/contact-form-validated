@@ -4,10 +4,13 @@ import { useTranslation } from "react-i18next";
 
 export default function LanguageSelector() {
   const { t, i18n } = useTranslation();
+
   const changeLang = (event: ChangeEvent<HTMLInputElement>) => {
     i18n.changeLanguage(event.currentTarget.value);
     localStorage.setItem("appLanguage", event.currentTarget.value);
   };
+
+  const currentLang = i18n.resolvedLanguage;
 
   return (
     <fieldset className={styles.container}>
@@ -22,6 +25,7 @@ export default function LanguageSelector() {
         value="ko"
         className={styles.visuallyHidden}
         onChange={changeLang}
+        checked={currentLang === "ko"}
       />
       <label htmlFor="language-ko">한국어</label>
       <input
@@ -31,6 +35,7 @@ export default function LanguageSelector() {
         value="en"
         className={styles.visuallyHidden}
         onChange={changeLang}
+        checked={currentLang === "en"}
       />
       <label htmlFor="language-en">English</label>
     </fieldset>
