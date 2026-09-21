@@ -1,3 +1,9 @@
+.form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
 .inputItem {
   display: flex;
   flex-direction: column;
@@ -134,6 +140,7 @@
   color: var(--color-on-dark);
   width: 100%;
   transition: background-color 150ms ease;
+  border-radius: 8px;
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -159,11 +166,15 @@
 }
 
 @media (min-width: 960px) {
+  .form {
+    padding: 30px;
+  }
+
   .messageCounter {
     font-size: 13px;
   }
 
-  .form button[type="submit"] {
+  .formSubmitBtn {
     font-size: 16px;
   }
 }

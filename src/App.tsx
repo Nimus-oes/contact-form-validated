@@ -5,7 +5,7 @@ import LanguageSelector from "./components/LanguageSelector";
 
 export default function App() {
   return (
-    <main>
+    <main className={styles.main}>
       <LanguageSelector />
       <div className={styles.container}>
         <ContactInfo />

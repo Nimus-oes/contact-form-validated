@@ -9,6 +9,7 @@
   --color-muted: #64748b;
   --color-accent: #2563eb;
   --color-error: #dc2626;
+  --color-page-background: #f8fafc;
   --color-surface: #ffffff;
   --color-surface-hover: #f3f4f6;
   --color-surface-selected: #e5e7eb;
@@ -47,6 +48,8 @@ img {
 }
 
 body {
+  min-height: 100vh;
+  background-color: var(--color-page-background);
   color: var(--color-body);
   font-family:
     "Pretendard Variable",
