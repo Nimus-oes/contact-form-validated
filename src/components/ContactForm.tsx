@@ -229,6 +229,7 @@ export default function ContactForm() {
         <div>
           <div className={styles.checkItem}>
             <input
+              className={styles.checkbox}
               id="contact-consent"
               type="checkbox"
               {...register("contactConsent", {
