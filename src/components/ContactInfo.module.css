@@ -1,5 +1,9 @@
 .info {
   color: var(--color-body);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
 .eyebrow {
@@ -16,6 +20,8 @@
   font-weight: 750;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  width: 80%;
+  text-align: center;
 }
 
 .description {
@@ -23,6 +29,8 @@
   font-size: 15px;
   font-weight: 400;
   line-height: 1.65;
+  width: 90%;
+  text-align: center;
 }
 
 .addressContainer {
@@ -40,10 +48,12 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  gap: 10px;
 }
 
 .addressItem:last-child {
   width: 100%;
+  margin-top: 10px;
 }
 
 .addressTitle {
@@ -56,6 +66,10 @@
 }
 
 @media (min-width: 960px) {
+  .info {
+    align-items: flex-start;
+  }
+
   .eyebrow {
     font-size: 13px;
   }
@@ -63,20 +77,37 @@
   .heading {
     font-size: 48px;
     letter-spacing: -0.025em;
+    text-align: left;
   }
 
   .description {
     font-size: 16px;
+    text-align: left;
+  }
+
+  .addressContainer {
+    gap: 20px;
   }
 
   .addressItem {
     width: 100%;
     justify-content: flex-start;
     font-size: 16px;
+    gap: 20px;
   }
 
   .addressTitle {
     display: block;
     font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .iconBox {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
   }
 }
