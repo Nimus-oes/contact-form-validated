@@ -55,14 +55,29 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <section aria-labelledby="success-title">
+      <section
+        aria-labelledby="success-title"
+        className={styles.successContainer}
+      >
         <h2 id="success-title" ref={successTitleRef} tabIndex={-1}>
           {t("success.title", "메시지를 보냈습니다!")}
         </h2>
-        <p>{t("success.thanks", "문의해 주셔서 감사합니다.")}</p>
-        <p>{t("success.description", "가능한 한 빨리 답변드리겠습니다.")}</p>
-        <button type="button" onClick={handleWriteAgain}>
-          {t("success.actions.writeAgain", "다시 작성하기")}
+        <p className={styles.successMessage}>
+          {t(
+            "success.thanks",
+            "문의해 주셔서 감사합니다. 가능한 한 빨리 답변드리겠습니다.",
+          )}
+        </p>
+        <hr className={styles.divider} />
+        <button
+          type="button"
+          onClick={handleWriteAgain}
+          className={styles.rewriteBtn}
+        >
+          <span className={styles.rewriteBtnText}>
+            {t("success.actions.writeAgain", "다시 작성하기")}
+          </span>
+          <span className={styles.rewriteBtnIcon}>➤</span>
         </button>
       </section>
     );

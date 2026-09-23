@@ -56,8 +56,7 @@
     "actions": {
       "writeAgain": "Send another message"
     },
-    "description": "We'll get back to you as soon as possible.",
-    "thanks": "Thanks for reaching out.",
+    "thanks": "Thanks for reaching out. \nWe'll get back to you as soon as possible.",
     "title": "Message Sent!"
   },
   "validation": {

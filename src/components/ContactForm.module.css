@@ -1,4 +1,5 @@
-.form {
+.form,
+.successContainer {
   background-color: white;
   padding: 20px;
   border-radius: 15px;
@@ -131,7 +132,8 @@
   line-height: 1.4;
 }
 
-.formSubmitBtn {
+.formSubmitBtn,
+.rewriteBtn {
   cursor: pointer;
   appearance: none;
   border: 0;
@@ -149,20 +151,44 @@
   align-items: center;
 }
 
-.formSubmitBtn:hover {
+.formSubmitBtn:hover,
+.rewriteBtn:hover {
   background-color: var(--color-button-hover);
 }
 
-.btnText {
+.btnText,
+.rewriteBtnText {
   grid-column: 2;
   font-size: 15px;
   font-weight: 700;
   line-height: 1.4;
 }
 
-.btnIcon {
+.btnIcon,
+.rewriteBtnIcon {
   grid-column: 3;
   justify-self: end;
+}
+
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 500px;
+}
+
+.successMessage {
+  white-space: pre-line;
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid var(--color-field-border);
 }
 
 @media (min-width: 960px) {
@@ -174,7 +200,8 @@
     font-size: 13px;
   }
 
-  .formSubmitBtn {
+  .formSubmitBtn,
+  .rewriteBtn {
     font-size: 16px;
   }
 }
