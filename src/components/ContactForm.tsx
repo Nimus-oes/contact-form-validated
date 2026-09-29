@@ -97,9 +97,10 @@ export default function ContactForm() {
             className={styles.textField}
             id="name"
             type="text"
-            placeholder={t("form.fields.name.placeholder", "이름을 입력하세요")}
+            autoComplete="name"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "name-error" : undefined}
+            placeholder={t("form.fields.name.placeholder", "이름을 입력하세요")}
             {...register("name", {
               onBlur: (event) => {
                 setValue("name", event.target.value.trim(), {
@@ -136,9 +137,10 @@ export default function ContactForm() {
             className={styles.textField}
             id="email"
             type="email"
-            placeholder="you@example.com"
+            autoComplete="email"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "email-error" : undefined}
+            placeholder="you@example.com"
             {...register("email", {
               onBlur: (event) => {
                 setValue("email", event.target.value.trim(), {
@@ -173,7 +175,9 @@ export default function ContactForm() {
           <input
             className={styles.textField}
             id="phone"
-            type="text"
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
             placeholder="010-1234-5678"
             {...register("phone")}
           />
