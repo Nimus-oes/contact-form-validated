@@ -93,10 +93,13 @@ export default function ContactForm() {
         <div className={styles.inputItem}>
           <label htmlFor="name">{t("form.fields.name.label", "이름")}</label>
           <input
+            required
             className={styles.textField}
             id="name"
             type="text"
             placeholder={t("form.fields.name.placeholder", "이름을 입력하세요")}
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? "name-error" : undefined}
             {...register("name", {
               onBlur: (event) => {
                 setValue("name", event.target.value.trim(), {
@@ -107,7 +110,7 @@ export default function ContactForm() {
               maxLength: 50,
             })}
           />
-          <div className={styles.errorMessageArea}>
+          <div id="name-error" className={styles.errorMessageArea}>
             {errors.name?.type === "required" && (
               <p>
                 {t("validation.name.required", "이름은 비워둘 수 없습니다")}
@@ -129,10 +132,13 @@ export default function ContactForm() {
             {t("form.fields.email.label", "이메일")}
           </label>
           <input
+            required
             className={styles.textField}
             id="email"
             type="email"
             placeholder="you@example.com"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? "email-error" : undefined}
             {...register("email", {
               onBlur: (event) => {
                 setValue("email", event.target.value.trim(), {
@@ -143,7 +149,7 @@ export default function ContactForm() {
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             })}
           />
-          <div className={styles.errorMessageArea}>
+          <div id="email-error" className={styles.errorMessageArea}>
             {errors.email?.type === "required" && (
               <p>
                 {t("validation.email.required", "이메일은 비워둘 수 없습니다")}
@@ -190,10 +196,12 @@ export default function ContactForm() {
                 onBlur={field.onBlur}
                 name={field.name}
                 triggerRef={field.ref}
+                invalid={Boolean(errors.subject)}
+                errorId="subject-error"
               />
             )}
           />
-          <div className={styles.errorMessageArea}>
+          <div id="subject-error" className={styles.errorMessageArea}>
             {errors.subject?.type === "required" && (
               <p>{t("validation.subject.required", "필수 선택 항목입니다")}</p>
             )}
@@ -205,11 +213,14 @@ export default function ContactForm() {
           </label>
           <div className={styles.messageResizer}>
             <textarea
+              required
               id="message"
               placeholder={t(
                 "form.fields.message.placeholder",
                 "프로젝트나 문의 내용을 알려주세요...",
               )}
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? "message-error" : undefined}
               {...register("message", {
                 onBlur: (event) => {
                   setValue("message", event.target.value.trim(), {
@@ -222,7 +233,7 @@ export default function ContactForm() {
             ></textarea>
             <span className={styles.messageCounter}>{messageLength}/1000</span>
           </div>
-          <div className={styles.errorMessageArea}>
+          <div id="message-error" className={styles.errorMessageArea}>
             {errors.message?.type === "required" && (
               <p>
                 {t(
@@ -244,9 +255,14 @@ export default function ContactForm() {
         <div>
           <div className={styles.checkItem}>
             <input
+              required
               className={styles.checkbox}
               id="contact-consent"
               type="checkbox"
+              aria-invalid={Boolean(errors.contactConsent)}
+              aria-describedby={
+                errors.contactConsent ? "consent-error" : undefined
+              }
               {...register("contactConsent", {
                 required: true,
               })}
@@ -258,7 +274,7 @@ export default function ContactForm() {
               )}
             </label>
           </div>
-          <div className={styles.errorMessageArea}>
+          <div id="consent-error" className={styles.errorMessageArea}>
             {errors.contactConsent?.type === "required" && (
               <p>
                 {t(

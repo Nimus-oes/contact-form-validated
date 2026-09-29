@@ -10,6 +10,8 @@ type SubjectSelectProps = {
   onValueChange: (value: InquiryType) => void;
   onBlur: () => void;
   triggerRef: Ref<HTMLButtonElement>;
+  invalid: boolean;
+  errorId: string;
 };
 
 export default function SubjectSelect({
@@ -18,15 +20,24 @@ export default function SubjectSelect({
   onValueChange,
   onBlur,
   triggerRef,
+  invalid,
+  errorId,
 }: SubjectSelectProps) {
   const { t } = useTranslation();
   return (
-    <Select.Root name={name} value={value} onValueChange={onValueChange}>
+    <Select.Root
+      required
+      name={name}
+      value={value}
+      onValueChange={onValueChange}
+    >
       <Select.Trigger
         id="subject"
         ref={triggerRef}
         onBlur={onBlur}
         className={styles.trigger}
+        aria-invalid={invalid}
+        aria-describedby={invalid ? errorId : undefined}
       >
         <Select.Value
           placeholder={t(
