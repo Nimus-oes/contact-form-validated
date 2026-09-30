@@ -259,7 +259,7 @@ export default function ContactForm() {
           </div>
         </div>
         <div>
-          <div className={styles.checkItem}>
+          <label htmlFor="contact-consent" className={styles.checkItem}>
             <input
               required
               className={styles.checkbox}
@@ -273,13 +273,11 @@ export default function ContactForm() {
                 required: true,
               })}
             />
-            <label htmlFor="contact-consent" className={styles.checkLabel}>
-              {t(
-                "form.fields.contactConsent.label",
-                "상기 연락처를 통해 연락을 받는 데 동의합니다",
-              )}
-            </label>
-          </div>
+            {t(
+              "form.fields.contactConsent.label",
+              "상기 연락처를 통해 연락을 받는 데 동의합니다",
+            )}
+          </label>
           <div id="consent-error" className={styles.errorMessageArea}>
             {errors.contactConsent?.type === "required" && (
               <p>
