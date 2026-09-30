@@ -8,7 +8,7 @@
 
 .eyebrow {
   color: var(--color-accent);
-  font-size: 12px;
+  font-size: var(--12px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.06em;
@@ -16,7 +16,7 @@
 
 .heading {
   color: var(--color-heading);
-  font-size: 34px;
+  font-size: var(--34px);
   font-weight: 750;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -26,7 +26,7 @@
 
 .description {
   color: var(--color-body);
-  font-size: 15px;
+  font-size: var(--15px);
   font-weight: 400;
   line-height: 1.65;
   width: 90%;
@@ -46,10 +46,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: var(--14px);
   font-weight: 400;
   line-height: 1.5;
-  gap: 10px;
+  gap: var(--10px);
 }
 
 .addressItem:last-child {
@@ -65,14 +65,14 @@
 .addressTitle {
   display: none;
   color: var(--color-heading);
-  font-size: 12px;
+  font-size: var(--12px);
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.06em;
 }
 
 .iconBox {
-  font-size: 15px;
+  font-size: var(--15px);
 }
 
 @media (min-width: 960px) {
@@ -81,40 +81,40 @@
   }
 
   .eyebrow {
-    font-size: 13px;
+    font-size: var(--13px);
   }
 
   .heading {
-    font-size: 48px;
+    font-size: var(--48px);
     letter-spacing: -0.025em;
     text-align: left;
   }
 
   .description {
-    font-size: 16px;
+    font-size: var(--16px);
     text-align: left;
   }
 
   .addressContainer {
-    gap: 20px;
+    gap: var(--20px);
   }
 
   .addressItem {
     width: 100%;
     justify-content: flex-start;
-    font-size: 16px;
-    gap: 20px;
+    font-size: var(--16px);
+    gap: var(--20px);
   }
 
   .addressTitle {
     display: block;
-    font-size: 13px;
+    font-size: var(--13px);
     margin-bottom: 5px;
   }
 
   .iconBox {
-    width: 40px;
-    height: 40px;
+    width: var(--40px);
+    height: var(--40px);
     display: flex;
     justify-content: center;
     align-items: center;

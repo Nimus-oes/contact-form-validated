@@ -12,21 +12,22 @@
 
 .inputItem > label {
   color: var(--color-heading);
-  font-size: 14px;
+  font-size: var(--14px);
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 5px;
+  margin-bottom: var(--5px);
 }
 
 .textField {
-  height: 40px;
-  padding: 10px;
+  min-height: var(--40px);
+  height: auto;
+  padding: var(--10px);
   color: var(--color-field-text);
   background-color: var(--color-surface);
   border: 1px solid var(--color-field-border);
   border-radius: 8px;
   outline: none;
-  font-size: 16px;
+  font-size: var(--16px);
   font-weight: 400;
   line-height: 1.5;
   transition:
@@ -48,15 +49,15 @@
 .messageResizer textarea::placeholder {
   color: var(--color-muted);
   opacity: 1;
-  font-size: 14px;
+  font-size: var(--14px);
 }
 
 .messageResizer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 180px;
-  min-height: 120px;
+  height: var(--180px);
+  min-height: var(--120px);
   background-color: var(--color-surface);
   border: 1px solid var(--color-field-border);
   border-radius: 8px;
@@ -81,39 +82,39 @@
   flex: 1;
   min-height: 0;
   width: 100%;
-  padding: 16px;
+  padding: var(--16px);
   border: 0;
   outline: 0;
   background-color: transparent;
   resize: none;
   overflow-y: auto;
   color: var(--color-field-text);
-  font-size: 16px;
+  font-size: var(--16px);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .messageCounter {
   align-self: flex-end;
-  padding: 4px 20px 12px;
+  padding: var(--4px) var(--20px) var(--12px);
   color: var(--color-muted);
-  font-size: 12px;
+  font-size: var(--12px);
   font-weight: 400;
   line-height: 1.4;
 }
 
 .errorMessageArea {
-  min-height: 30px;
+  min-height: var(--30px);
   color: var(--color-error);
-  font-size: 13px;
+  font-size: var(--13px);
   font-weight: 500;
   line-height: 1.4;
-  padding-top: 4px;
+  padding-top: var(--4px);
 }
 
 .checkbox {
-  width: 16px;
-  height: 16px;
+  width: var(--16px);
+  height: var(--16px);
   border: 1px solid var(--color-field-border-hover);
   border-radius: 4px;
   accent-color: var(--color-accent);
@@ -121,12 +122,12 @@
 
 .checkItem {
   color: var(--color-body);
-  font-size: 14px;
+  font-size: var(--14px);
   font-weight: 400;
   line-height: 1.4;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--8px);
   cursor: pointer;
 }
 
@@ -144,8 +145,9 @@
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  padding-inline: 16px;
-  height: 50px;
+  padding-inline: var(--16px);
+  min-height: var(--50px);
+  height: auto;
   align-items: center;
 }
 
@@ -157,7 +159,7 @@
 .btnText,
 .rewriteBtnText {
   grid-column: 2;
-  font-size: 15px;
+  font-size: var(--15px);
   font-weight: 700;
   line-height: 1.4;
 }
@@ -173,8 +175,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  height: 500px;
+  gap: var(--20px);
+  min-height: 500px;
+  height: auto;
 }
 
 .successMessage {
@@ -184,7 +187,7 @@
 
 .divider {
   width: 100%;
-  margin: 20px 0;
+  margin: var(--20px) 0;
   border: 0;
   border-top: 1px solid var(--color-field-border);
 }
@@ -195,11 +198,11 @@
   }
 
   .messageCounter {
-    font-size: 13px;
+    font-size: var(--13px);
   }
 
   .formSubmitBtn,
   .rewriteBtn {
-    font-size: 16px;
+    font-size: var(--16px);
   }
 }

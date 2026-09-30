@@ -19,6 +19,25 @@
   --color-on-dark: #ffffff;
   --color-button-hover: #2563eb;
   --color-icon-background: #eef2f7;
+  --4px: 0.25rem;
+  --5px: 0.3125rem;
+  --6px: 0.375rem;
+  --8px: 0.5rem;
+  --10px: 0.625rem;
+  --12px: 0.75rem;
+  --13px: 0.8125rem;
+  --14px: 0.875rem;
+  --15px: 0.9375rem;
+  --16px: 1rem;
+  --20px: 1.25rem;
+  --30px: 1.875rem;
+  --34px: 2.125rem;
+  --35px: 2.1875rem;
+  --40px: 2.5rem;
+  --48px: 3rem;
+  --50px: 3.125rem;
+  --120px: 7.5rem;
+  --180px: 11.25rem;
 }
 
 html {
