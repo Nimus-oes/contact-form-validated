@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import { useEffect, type ChangeEvent } from "react";
 import styles from "./LanguageSelector.module.css";
 import { useTranslation } from "react-i18next";
 
@@ -11,6 +11,10 @@ export default function LanguageSelector() {
   };
 
   const currentLang = i18n.resolvedLanguage;
+
+  useEffect(() => {
+    document.documentElement.lang = currentLang ?? "ko";
+  }, [currentLang]);
 
   return (
     <fieldset className={styles.container}>
