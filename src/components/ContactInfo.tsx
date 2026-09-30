@@ -25,7 +25,7 @@ export default function ContactInfo() {
               {t("contact.details.email.label", "이메일")}
             </p>
             {/* i18next-instrument-ignore-next-line */}
-            <p>hello@abc.studio</p>
+            <a href="mailto:hello@abc.studio">hello@abc.studio</a>
           </div>
         </div>
         <div className={styles.addressItem}>
@@ -37,7 +37,7 @@ export default function ContactInfo() {
               {t("contact.details.phone.label", "전화번호")}
             </p>
             {/* i18next-instrument-ignore-next-line */}
-            <p>+82 10-1234-5678</p>
+            <a href="tel:+821012345678">+82 10-1234-5678</a>
           </div>
         </div>
         <div className={styles.addressItem}>

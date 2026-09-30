@@ -57,6 +57,11 @@
   margin-top: 10px;
 }
 
+.addressItem a,
+.addressItem a:visited {
+  color: inherit;
+}
+
 .addressTitle {
   display: none;
   color: var(--color-heading);
