@@ -103,7 +103,7 @@
 }
 
 .errorMessageArea {
-  height: 30px;
+  min-height: 30px;
   color: var(--color-error);
   font-size: 13px;
   font-weight: 500;
