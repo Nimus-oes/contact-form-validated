@@ -17,7 +17,7 @@ i18next
       caches: [],
     },
     backend: {
-      loadPath: "public/locales/{{lng}}/translation.json",
+      loadPath: "./locales/{{lng}}/translation.json",
     },
     react: {
       useSuspense: true,
