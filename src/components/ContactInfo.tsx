@@ -17,7 +17,7 @@ export default function ContactInfo() {
       </p>
       <address className={styles.addressContainer}>
         <div className={styles.addressItem}>
-          <div className={styles.iconBox}>
+          <div className={styles.iconBox} aria-hidden="true">
             <div>✉️</div>
           </div>
           <div>
@@ -29,7 +29,7 @@ export default function ContactInfo() {
           </div>
         </div>
         <div className={styles.addressItem}>
-          <div className={styles.iconBox}>
+          <div className={styles.iconBox} aria-hidden="true">
             <div>📞</div>
           </div>
           <div>
@@ -41,7 +41,7 @@ export default function ContactInfo() {
           </div>
         </div>
         <div className={styles.addressItem}>
-          <div className={styles.iconBox}>
+          <div className={styles.iconBox} aria-hidden="true">
             <div>📍</div>
           </div>
           <div>

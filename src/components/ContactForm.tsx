@@ -77,7 +77,9 @@ export default function ContactForm() {
           <span className={styles.rewriteBtnText}>
             {t("success.actions.writeAgain", "다시 작성하기")}
           </span>
-          <span className={styles.rewriteBtnIcon}>➤</span>
+          <span className={styles.rewriteBtnIcon} aria-hidden="true">
+            ➤
+          </span>
         </button>
       </section>
     );
@@ -294,7 +296,9 @@ export default function ContactForm() {
             <span className={styles.btnText}>
               {t("form.actions.submit", "메시지 보내기")}
             </span>
-            <span className={styles.btnIcon}>➤</span>
+            <span className={styles.btnIcon} aria-hidden="true">
+              ➤
+            </span>
           </button>
         </div>
       </form>
