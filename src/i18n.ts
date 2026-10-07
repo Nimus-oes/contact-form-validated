@@ -10,7 +10,7 @@ i18next
   .init({
     supportedLngs: ["en", "ko"],
     fallbackLng: "ko",
-    debug: true,
+    debug: import.meta.env.DEV,
     detection: {
       order: ["localStorage", "navigator"],
       lookupLocalStorage: "appLanguage",
