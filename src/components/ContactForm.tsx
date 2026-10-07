@@ -21,7 +21,7 @@ export default function ContactForm() {
     formState: { errors },
   } = useForm<ContactFormValues>({
     mode: "onSubmit",
-    reValidateMode: "onChange",
+    reValidateMode: "onBlur",
     defaultValues: DEFAULT_FORM_VALUES,
     shouldFocusError: true,
   });
@@ -104,6 +104,7 @@ export default function ContactForm() {
             aria-describedby={errors.name ? "name-error" : undefined}
             placeholder={t("form.fields.name.placeholder", "이름을 입력하세요")}
             {...register("name", {
+              setValueAs: (value) => value.trim(),
               onBlur: (event) => {
                 setValue("name", event.target.value.trim(), {
                   shouldDirty: true,
@@ -144,6 +145,7 @@ export default function ContactForm() {
             aria-describedby={errors.email ? "email-error" : undefined}
             placeholder="you@example.com"
             {...register("email", {
+              setValueAs: (value) => value.trim(),
               onBlur: (event) => {
                 setValue("email", event.target.value.trim(), {
                   shouldDirty: true,
@@ -228,6 +230,7 @@ export default function ContactForm() {
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}
               {...register("message", {
+                setValueAs: (value) => value.trim(),
                 onBlur: (event) => {
                   setValue("message", event.target.value.trim(), {
                     shouldDirty: true,
