@@ -221,7 +221,7 @@ i18next-cli가 제공하는 `instrument` 명령을 이용해 하드코딩된 문
 
 > `<p>"Name cannot exceed 50 characters"</p>`
 >
->                        ↓
+> ↓
 >
 > `<p>{t("nameCannotExceed50Characters", "Name cannot exceed 50 characters")}</p>`
 
@@ -240,7 +240,7 @@ i18next-cli의 강점은 하드코딩 문구를 탐지하여 t() 함수를 자�
 
 > `<p>{t("nameCannotExceed50Characters", "Name cannot exceed 50 characters")}</p>`
 >
->                                ↓
+> ↓
 >
 > `<p>{t("validation.name.maxLength", "Name cannot exceed 50 characters")}</p>`
 
