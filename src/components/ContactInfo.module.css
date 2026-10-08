@@ -75,7 +75,7 @@
   font-size: var(--15px);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 60rem /* 960px */) {
   .info {
     align-items: flex-start;
   }

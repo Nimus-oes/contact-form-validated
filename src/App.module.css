@@ -9,7 +9,7 @@
   padding: 30px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 60rem /* 960px */) {
   .container {
     flex-direction: row;
     justify-content: center;
